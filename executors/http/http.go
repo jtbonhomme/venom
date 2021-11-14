@@ -224,7 +224,6 @@ func (Executor) Run(ctx context.Context, step venom.TestStep) (interface{}, erro
 
 			var m interface{}
 			decoder := json.NewDecoder(strings.NewReader(string(bb)))
-			decoder.UseNumber()
 			if err := decoder.Decode(&m); err == nil {
 				r.BodyJSON = m
 			}
